@@ -24,7 +24,7 @@ class Key:
         self.G = _globalECG
         if public:
             self.sec = None
-            self.pub = EcPt.from_binary(key_bytes, self.G)
+            self.pub = EcPt.from_binary(key_bytes, self.G)//只生成公钥
             self.optim = None
         else:
             self.sec = Bn.from_binary(sha256(key_bytes).digest())
